@@ -153,7 +153,7 @@
             border: 2px solid #d4af37;
             color: #d4af37;
             background: transparent;
-            border-radius: 8px;
+            border-radius: 9999px;
             font-weight: 600;
             font-size: 0.875rem;
             transition: all 0.3s ease;
@@ -297,7 +297,7 @@
                 
                 <!-- Main Tagline - Simple & Light Weight -->
                 <h1 class="text-3xl md:text-5xl lg:text-6xl mb-6 leading-tight" style="font-weight: 300; letter-spacing: 0.02em;">
-                    A vision for zero carbon<br/>living and mobility.
+                    Start Your Virtual Exploration<br/>of UNU Yogyakarta.
                 </h1>
                 
                 <!-- 360 Badge - Text Only (No Box) -->
@@ -501,11 +501,38 @@
     </div>
 
     <!-- Loading Screen -->
-    <div id="loading-screen" class="hidden fixed inset-0 bg-unu-primary z-[100] flex items-center justify-center">
-        <div class="text-center text-white">
-            <div class="w-16 h-16 border-4 border-white/20 border-t-unu-gold rounded-full animate-spin mx-auto mb-4"></div>
-            <h2 class="text-2xl font-semibold mb-2">Memuat data...</h2>
-            <p class="text-gray-200">Mohon tunggu sebentar</p>
+    <div id="loading-screen" class="hidden fixed inset-0 z-[100] flex items-center justify-center">
+        <!-- Gradient Background Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-unu-dark via-unu-primary to-black opacity-95"></div>
+        
+        <!-- Loading Content -->
+        <div class="relative text-center text-white z-10 px-6">
+            <!-- Animated Logo Icon -->
+            <div class="mb-8 flex items-center justify-center">
+                <div class="relative">
+                    <!-- Outer Ring -->
+                    <div class="w-24 h-24 border-4 border-white/10 border-t-unu-gold rounded-full animate-spin"></div>
+                    <!-- Inner Icon -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fas fa-vr-cardboard text-unu-gold text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Loading Text -->
+            <h2 class="text-3xl md:text-4xl font-semibold mb-3" style="font-family: 'Poppins', sans-serif; font-weight: 300; letter-spacing: 0.02em;">
+                Memuat Virtual Tour
+            </h2>
+            <p class="text-white/70 text-sm md:text-base font-light tracking-wide" style="letter-spacing: 0.1em;">
+                MOHON TUNGGU SEBENTAR
+            </p>
+            
+            <!-- Progress Dots -->
+            <div class="flex items-center justify-center gap-2 mt-6">
+                <div class="w-2 h-2 bg-unu-gold rounded-full animate-pulse" style="animation-delay: 0s;"></div>
+                <div class="w-2 h-2 bg-unu-gold rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
+                <div class="w-2 h-2 bg-unu-gold rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
+            </div>
         </div>
     </div>
 
@@ -513,7 +540,7 @@
     <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     
     <!-- Custom JS -->
-    <script src="app.js?v=4.5"></script>
+    <script src="app.js?v=4.6"></script>
     
     <script>
         // Helper functions

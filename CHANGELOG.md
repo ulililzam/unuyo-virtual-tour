@@ -1,5 +1,165 @@
 # Changelog - Virtual Tour UNU Yogyakarta
 
+## 🎨 UI Refinement v4.6 (7 November 2025)
+
+### ✨ Modern Loading Screen & Button Consistency
+
+#### 🔘 PMB Button Update
+
+**Rounded Corners Improvement:**
+- **Before**: `border-radius: 8px` (sharp rounded corners)
+- **After**: `border-radius: 9999px` (pill shape - fully rounded)
+- **Purpose**: Match the "EXPLORE THE CAMPUS" button style for visual consistency
+
+**Visual Comparison:**
+```
+Before:  ┌──────────┐
+         │ PMB UNU  │
+         └──────────┘
+
+After:   ╭──────────╮
+         │ PMB UNU  │
+         ╰──────────╯
+```
+
+#### ⏳ Loading Screen Redesign
+
+**Previous Design (v4.5 and earlier):**
+- Simple blue background (`bg-unu-primary`)
+- Basic spinner with white/gold colors
+- University icon (🏛️)
+- Minimal text layout
+- Plain appearance
+
+**New Modern Design (v4.6):**
+
+**1. Gradient Background**
+```css
+bg-gradient-to-br from-unu-dark via-unu-primary to-black opacity-95
+```
+- Sophisticated multi-color gradient
+- Deep navy → Blue → Black transition
+- 95% opacity for depth
+
+**2. Enhanced Spinner Design**
+- Outer ring: 96px × 96px (larger for better visibility)
+- Border: 4px with white/10 base and gold accent on top
+- **Inner icon**: VR Cardboard icon (fa-vr-cardboard) in gold - **SAME as Panorama 360° feature**
+- Combined spinner + icon creates professional look with thematic consistency
+
+**3. Typography Matching Landing Page**
+- Heading: 
+  - Font: Poppins
+  - Weight: 300 (light, elegant)
+  - Size: 3xl on desktop, 4xl responsive
+  - Letter spacing: 0.02em
+- Subtext:
+  - Color: white/70 (subtle)
+  - Letter spacing: 0.1em (wide tracking)
+  - Uppercase for emphasis
+
+**4. Animated Progress Dots**
+- Three gold dots with pulsing animation
+- Staggered animation delay (0s, 0.2s, 0.4s)
+- Visual feedback for ongoing loading
+
+**Layout Structure:**
+```
+┌─────────────────────────────────────┐
+│  Gradient Background (Dark→Blue→Black) │
+│                                     │
+│           ⟳  [Spinner]              │
+│           🥽  [VR Icon]             │
+│                                     │
+│     Memuat Virtual Tour             │
+│   MOHON TUNGGU SEBENTAR             │
+│                                     │
+│          • • •                      │
+│     (Animated Dots)                 │
+└─────────────────────────────────────┘
+```
+
+#### 📊 Component Breakdown
+
+**Loading Screen Elements:**
+
+| Element | Style | Purpose |
+|---------|-------|---------|
+| Background | Gradient overlay | Modern, depth |
+| Spinner | 24px ring, gold top | Loading indicator |
+| Icon | **VR Cardboard (gold)** | **Thematic consistency with Panorama 360°** |
+| Title | Poppins 300, 3xl | Clear message |
+| Subtitle | Uppercase, tracked | Visual hierarchy |
+| Dots | Pulse animation | Active feedback |
+
+**Icon Consistency:**
+- ✅ **Features Section**: fa-vr-cardboard (Panorama 360°)
+- ✅ **Loading Screen**: fa-vr-cardboard (same icon)
+- 🎯 **Result**: Visual continuity throughout the experience
+
+**Consistency Achieved:**
+- ✅ Same font weights as landing page (Poppins 300)
+- ✅ Same letter spacing style (0.02em, 0.1em)
+- ✅ Same color palette (unu-dark, unu-gold)
+- ✅ Same gradient approach (multi-stop)
+- ✅ Same icon style (Font Awesome)
+- ✅ **Same VR icon as Panorama 360° feature**
+
+#### 🎯 Design Philosophy
+
+**Why These Changes?**
+
+1. **Button Consistency**: PMB button now matches EXPLORE button shape → unified design language
+2. **Loading Screen Sync**: Loading UI now reflects landing page aesthetic → seamless experience
+3. **Icon Consistency**: VR Cardboard icon used in both Features and Loading → thematic coherence
+4. **Professional Polish**: Gradient + icon + typography → enterprise-level quality
+5. **User Experience**: Better visual feedback with animated elements
+
+**Before vs After Summary:**
+
+| Aspect | v4.5 | v4.6 |
+|--------|------|------|
+| PMB Button | Rounded 8px | Pill shape (9999px) |
+| Loading BG | Solid blue | Gradient (dark→blue→black) |
+| Spinner | Simple ring | Ring + Icon combo |
+| Loading Icon | 🏛️ University | 🥽 **VR Cardboard** |
+| Typography | Basic | Poppins 300 (elegant) |
+| Animation | Spin only | Spin + Pulse dots |
+| Style Sync | Partial | Full landing page match |
+| Icon Theme | Generic | **Panorama 360° themed** |
+
+#### 📝 Technical Details
+
+**Files Modified:**
+- `frontend/index.html` (v4.6)
+
+**CSS Changes:**
+```css
+/* PMB Button */
+border-radius: 8px → border-radius: 9999px;
+
+/* Loading Screen */
+- Simple bg-unu-primary
++ Gradient overlay with absolute positioning
++ VR Cardboard icon (fa-vr-cardboard) - matches Panorama 360°
++ Poppins 300 typography
++ Animated progress dots
+```
+
+**Icon Change:**
+```html
+<!-- Before -->
+<i class="fas fa-university text-unu-gold text-3xl"></i>
+
+<!-- After -->
+<i class="fas fa-vr-cardboard text-unu-gold text-3xl"></i>
+```
+
+**Cache Busting:**
+- app.js version: v4.5 → v4.6
+
+---
+
 ## 🎨 Logo Update v4.5 (7 November 2025)
 
 ### ✨ Dual Logo & Simplified Badge
